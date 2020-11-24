@@ -1,0 +1,5 @@
+{{ with index . "line" }}
+{{ range . }}
+<h3>{{ .text | safeHTML }} </h3>
+{{ end }}
+{{ end }}

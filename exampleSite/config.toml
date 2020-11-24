@@ -5,7 +5,7 @@ title = "Chris Turner"
 disqusShortname = ""
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
-theme = "hugo-sustain"
+theme = "withstand"
 
 [permalinks]
   post = "/:year/:month/:day/:slug"
@@ -19,14 +19,54 @@ theme = "hugo-sustain"
   custom_css = []
   custom_js  = []
 
+[params.intro]
+[[params.intro.line]]
+  text = "I'm <strong>Chris Turner</strong>, a Software Engineer."
+[[params.intro.line]]
+  text = "I love all things computer science and maths."
+[[params.intro.line]]
+  text = "Have a look at some of my working <a href='/projects/'>projects</a>."
+[[params.intro.line]]
+  text = "For more check out my academic &amp; professional <a href='https://demo.nurlan.co/hugo-vitae/'>resume</a>."
+[[params.intro.line]]
+  text = "Contact me via the icons below."
+
 [params.social]
-  Github        = "username"
-  Email         = "email@example.com"
-  Twitter       = "username"
-  LinkedIn      = "username"
-  Stackoverflow = "username"
-  Medium        = "username"
-  Telegram      = "username"
+[[params.social.link]]
+  name ="Github"
+  url = "https://github.com/"
+  icon = "fab fa-github"
+  desc = "Check out my Github projects"
+[[params.social.link]]
+  name ="Email"
+  url = "mailto:"
+  icon = "fas fa-envelope"
+  desc = "Email me"
+[[params.social.link]]
+  name ="Twitter"
+  url = "https://twitter.com/"
+  icon = "fab fa-twitter"
+  desc = "Follow me on Twitter"
+[[params.social.link]]
+  name ="linkedin"
+  url = "https://linkedin.com/"
+  icon = "fab fa-linkedin"
+  desc = "Connect with me on LinkedIn"
+[[params.social.link]]
+  name ="StackOverflow"
+  url = "https://stackoverflow.com/"
+  icon = "fab fa-stack-overflow"
+  desc = "Follow me on StackOverflow"
+[[params.social.link]]
+  name ="Medium"
+  url = "https://medium.com/"
+  icon = "fab fa-medium"
+  desc = "Follow me on Medium"
+[[params.social.link]]
+  name ="Telegram"
+  url = "https://telegram.me/"
+  icon = "fab fa-telegram"
+  desc = "Message me on Telegram"
 
 ## Main Menu
 [[menu.main]]
