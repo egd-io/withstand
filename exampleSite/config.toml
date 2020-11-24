@@ -19,6 +19,13 @@ theme = "withstand"
   custom_css = []
   custom_js  = []
 
+# All of these can be left blank
+[params.copyright]
+  # First year copyright should start.
+  first_year = "2018"
+  license_name = "CC BY 3.0 US"
+  license_url = "https://creativecommons.org/licenses/by/3.0/us/"
+
 [params.intro]
 [[params.intro.line]]
   text = "I'm <strong>Chris Turner</strong>, a Software Engineer."

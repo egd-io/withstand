@@ -1,8 +1,8 @@
 <footer>
   <div id="footer">
     <div class="container">
-      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
-      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+      <p class="text-muted">&copy;{{ with .Site.Params.copyright }} {{ .first_year }} -{{ end }} {{ now.Format "2006"}} {{ .Site.Params.Author }}{{ if .Site.Params.copyright.license_name }} under {{ if .Site.Params.copyright.license_url }}<a href="{{ .Site.Params.copyright.license_url }}" target="_blank">{{ .Site.Params.copyright.license_name }}</a>{{ else }}{{ .Site.Params.copyright.license_name }}{{ end }}{{ end }}.<br />
+      Powered by <a href="https://gohugo.io/">Hugo</a> and <a href="https://www.github.com/egd-io/withstand">withstand</a>.</p>
     </div>
   </div>
 </footer>
