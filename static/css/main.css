@@ -159,8 +159,18 @@ html, body {
 .blog-post{
   padding-top: 15px;
 }
+.blog-post h1{
+  text-align: left;
+}
+.blog-post h2{
+  text-align: left;
+}
+.blog-post h3{
+  text-align: left;
+}
 .blog-title{
   padding-top: 2px;
+  text-align: left;
 }
 .label {
   display: inline-block;
