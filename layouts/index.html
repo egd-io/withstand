@@ -5,7 +5,7 @@
       <section id="about">
         <div class="container">
         <div class="avatar">
-          <img class="img-circle avatar" src="{{ .Site.BaseURL }}img/{{ .Site.Params.avatar }}" alt="Responsive image">
+          <img class="img-circle img-responsive" src="{{ .Site.BaseURL }}img/{{ .Site.Params.avatar }}" alt="Responsive image">
         </div>
         {{ partial "intro.html" .Site.Params.intro }}
         {{ partial "social.html" .Site.Params.social }}

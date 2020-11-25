@@ -13,11 +13,22 @@
                   <h5 style="text-align: right">
                     {{ .Date.Format "January 2, 2006" }}
                   </h5>
+                  <p style="text-align: right">
+                  {{- range .Params.categories }}
+                  <a href="{{ "/" | relLangURL}}categories/{{ . | urlize }}"><span class="label label-success">{{ . }}</span></a>
+                  {{- end }}
+                  </p>
+                  <p style="text-align: right">
+                  {{- range .Params.tags }}
+                  <a class="label label-secondary" href="{{ "/" | relLangURL}}tags/{{ . | urlize }}">{{ . }}</a>
+                  {{- end }}
+                  </p>
                  </div>
                  <div class="col-sm-8 col-md-8 col-lg-8">
                    <h5 style="text-align: left">
                     <strong><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></strong>
                   </h5>
+                  <p>{{ .Summary }}</p>
                 </div>
               </div>
             {{ end }}
