@@ -1,13 +1,5 @@
-{{ partial "head" . }}
-  <body>
-    <div id="wrap">
-      {{ partial "header" . }}
-      <div class="container">
+{{ define "main" }}
         <div class="page-not-found">
-          <h3>Uh oh! Page not found!</h3>
+          <h1>Uh oh! Page not found!</h1>
         </div>
-      </div>
-    </div>
-    {{ partial "footer" . }}
-  </body>
-</html>
+{{ end }}
