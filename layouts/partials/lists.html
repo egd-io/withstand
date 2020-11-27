@@ -8,17 +8,17 @@
     </h3>
     <h6 style="text-align: right">
       {{- range $series }}
-        <a href="{{ .Permalink }}"><span class="label label-danger">{{ .LinkTitle | lower }}</span></a>
+        <a href="{{ .Permalink }}"><span class="label label-warning">{{ .LinkTitle | lower }}</span></a>
       {{- end }}
     </h6>
     <h6 style="text-align: right">
       {{- range $categories }}
-        <a href="{{ .Permalink }}"><span class="label label-success">{{ .LinkTitle | lower }}</span></a>
+        <a href="{{ .Permalink }}"><span class="label label-info">{{ .LinkTitle | lower }}</span></a>
       {{- end }}
     </h6>
     <h6 style="text-align: right">
       {{- range $tags }}
-        <a class="label label-secondary" href="{{ .Permalink }}">{{ .LinkTitle | lower }}</a>
+        <a href="{{ .Permalink }}"><span class="label label-primary">{{ .LinkTitle | lower }}</span></a>
       {{- end }}
     </h6>
   </div>

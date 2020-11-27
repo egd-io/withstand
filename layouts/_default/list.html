@@ -6,10 +6,11 @@
       <div class="container">
         <h1>{{ .Title }} Archive</h1>
         <h4>
-          <span class="label label-danger">series</span>
-          <span class="label label-success">categories</span>
-          <span class="label label-dark">tags</span>
+          <span class="label label-warning">series</span>
+          <span class="label label-info">categories</span>
+          <span class="label label-primary">tags</span>
         </h4>
+        {{ .Content }}
           <div class="panel panel-default">
             <div class="panel-body">
             {{ range .Data.Pages.ByPublishDate.Reverse }}

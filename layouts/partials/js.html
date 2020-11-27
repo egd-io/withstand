@@ -1,7 +1,14 @@
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Bootstrap core JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+{{ $jQuery := resources.Get "js/jquery.min.js" }}
+{{ $bootstrap := resources.Get "js/bootstrap.min.js" }}
+{{ $highlight := resources.Get "js/highlight.min.js" }}
+
+{{ $js := ( slice $jQuery $bootstrap $highlight ) | resources.Concat "js/main.js" }}
+{{ if .Site.IsServer }}
+<script src="{{ $js.RelPermalink }}"></script>
+{{ else }}
+{{ $js := $js | minify | fingerprint }}
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+{{ end }}
 {{- range .Site.Params.custom_js -}}
 <script src="{{ $.Site.BaseURL }}{{ . }}"></script>
 {{ end }}
@@ -10,7 +17,5 @@
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="{{ .Site.BaseURL }}js/ie10-viewport-bug-workaround.js"></script>
 {{- if .Params.highlight -}}
-{{ "<!-- Syntax highlighting -->" | safeHTML }}
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 {{ end }}
