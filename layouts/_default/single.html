@@ -19,11 +19,14 @@
             {{ .Date.Format "January 2, 2006" }} &nbsp;&bull;&nbsp; <i class="far fa-clock"></i> {{ .ReadingTime }} - {{ math.Round ( mul 1.2 .ReadingTime ) }} minute read
             </p>
             <p>
-            {{- range .Params.categories }}
-            <a href="{{ "/" | relLangURL}}categories/{{ . | urlize }}"><span class="label label-success">{{ . }}</span></a>
+            {{- range ( .GetTerms "series" ) }}
+            <a href="{{ .Permalink }}"><span class="label label-danger">{{ .LinkTitle | lower }}</span></a>
             {{- end }}
-            {{- range .Params.tags }}
-            <a class="label label-secondary" href="{{ "/" | relLangURL}}tags/{{ . | urlize }}">{{ . }}</a>
+            {{- range ( .GetTerms "categories" ) }}
+            <a href="{{ .Permalink }}"><span class="label label-success">{{ .LinkTitle | lower }}</span></a>
+            {{- end }}
+            {{- range ( .GetTerms "tags" ) }}
+            <a class="label label-secondary" href="{{ .Permalink }}">{{ .LinkTitle | lower }}</a>
             {{- end }}
             </p>
           </h4>
