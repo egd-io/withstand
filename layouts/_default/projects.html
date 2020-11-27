@@ -1,15 +1,16 @@
 <section id="projects">
-  <div class="container">
-    <h3>{{ .Site.Data.projects.name }}</h3>
-    <div class="panel panel-default">
-      <div class="panel-body">
-      {{ range $i, $el := .Site.Data.projects.source }}
-        <h5>
-          <i class="{{ .icon }}"></i>&nbsp;&nbsp;
-          <strong><a href="#">Project {{ add $i 1 }}</a></strong>&nbsp;-&nbsp;{{ $el.description }}
+    <div class="container">
+         <h3>{{ .Site.Data.projects.name }}</h3>
+        <div class="card">
+            <div class="card-body">{{ range $i, $el := .Site.Data.projects.source }}
+                 <h5>
+
+          <i class="{{ .icon }}"></i>&#xA0;&#xA0;
+
+          <strong><a href="#">Project {{ add $i 1 }}</a></strong>&#xA0;-&#xA0;{{ $el.description }}
+
         </h5>
-      {{ end }}
-      </div>
+{{ end }}</div>
+        </div>
     </div>
-  </div>
 </section>

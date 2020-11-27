@@ -2,30 +2,46 @@
 {{ $categories := ( .GetTerms "categories" ) }}
 {{ $tags := ( .GetTerms "tags" ) }}
 <div class="row">
-  <div class="col-sm-4 col-md-4 col-lg-4">
-    <h3 style="text-align: right">
+    <div class="col-md-4 col-lg-4 col-xl-4">
+         <h3 style="text-align: right">
+
       {{ .Date.Format "January 2, 2006" }}
+
     </h3>
-    <h6 style="text-align: right">
+         <h6 style="text-align: right">
+
       {{- range $series }}
-        <a href="{{ .Permalink }}"><span class="label label-danger">{{ .LinkTitle | lower }}</span></a>
+
+        <a href="{{ .Permalink }}"><span class="badge badge-danger">{{ .LinkTitle | lower }}</span></a>
+
       {{- end }}
+
     </h6>
-    <h6 style="text-align: right">
+         <h6 style="text-align: right">
+
       {{- range $categories }}
-        <a href="{{ .Permalink }}"><span class="label label-success">{{ .LinkTitle | lower }}</span></a>
+
+        <a href="{{ .Permalink }}"><span class="badge badge-success">{{ .LinkTitle | lower }}</span></a>
+
       {{- end }}
+
     </h6>
-    <h6 style="text-align: right">
+         <h6 style="text-align: right">
+
       {{- range $tags }}
-        <a class="label label-secondary" href="{{ .Permalink }}">{{ .LinkTitle | lower }}</a>
+
+        <a class="badge badge-secondary" href="{{ .Permalink }}">{{ .LinkTitle | lower }}</a>
+
       {{- end }}
+
     </h6>
-  </div>
-  <div class="col-sm-8 col-md-8 col-lg-8">
-  <h3 style="text-align: left">
+    </div>
+    <div class="col-md-8 col-lg-8 col-xl-8">
+         <h3 style="text-align: left">
+
     <strong><a href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a></strong>
+
   </h3>
-    <p>{{ .Summary }}</p>
-  </div>
+        <p>{{ .Summary }}</p>
+    </div>
 </div>

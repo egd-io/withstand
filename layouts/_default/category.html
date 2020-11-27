@@ -1,23 +1,19 @@
 {{ partial "head" . }}
   <body>
     <div id="wrap">
-      <!-- Header -->
-      {{ partial "header" . }}
+    <!-- Header -->
+    {{ partial "header" . }}
       <div class="container">
         <h1>{{ .Title }} Posts</h1>
         <h4>
-          <span class="label label-danger">series</span>
-          <span class="label label-success">categories</span>
-          <span class="label label-dark">tags</span>
+          <span class="badge badge-danger">series</span>
+          <span class="badge badge-success">categories</span>
+          <span class="badge badge-dark">tags</span>
         </h4>
         {{ .Content }}
-          <div class="panel panel-default">
-            <div class="panel-body">
-            {{ range .Data.Pages.ByPublishDate.Reverse }}
-              {{ partial "lists" . }}
-            {{ end }}
-            </div>
-          </div>
+        <div class="card">
+          <div class="card-body">{{ range .Data.Pages.ByPublishDate.Reverse }} {{ partial "lists" . }} {{ end }}</div>
+        </div>
       </div>
     </div>
     <!-- Footer -->
