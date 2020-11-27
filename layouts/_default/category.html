@@ -1,16 +1,13 @@
-{{ partial "head" . }}
-  <body>
-    <div id="wrap">
-      <!-- Header -->
-      {{ partial "header" . }}
-      <div class="container">
+{{ define "main" }}
         <h1>{{ .Title }} Posts</h1>
         <h4>
           <span class="label label-warning">series</span>
           <span class="label label-info">categories</span>
           <span class="label label-primary">tags</span>
         </h4>
-        {{ .Content }}
+        {{ with .Content }}
+          {{ . }}
+        {{ end }}
           <div class="panel panel-default">
             <div class="panel-body">
             {{ range .Data.Pages.ByPublishDate.Reverse }}
@@ -18,9 +15,4 @@
             {{ end }}
             </div>
           </div>
-      </div>
-    </div>
-    <!-- Footer -->
-    {{ partial "footer" . }}
-  </body>
-</html>
+{{ end }}

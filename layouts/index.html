@@ -1,17 +1,7 @@
-{{ partial "head" . }}
-  <body>
-    <div id="wrap">
-      {{ partial "header" . }}
-      <section id="about">
-        <div class="container">
+{{ define "main" }}
         <div class="avatar">
           <img class="img-circle img-responsive" src="{{ .Site.BaseURL }}img/{{ .Site.Params.avatar }}" alt="Responsive image">
         </div>
         {{ partial "intro.html" .Site.Params.intro }}
         {{ partial "social.html" .Site.Params.social }}
-        </div>
-      </section>
-    </div>
-    {{ partial "footer" . }}
-  </body>
-</html>
+{{ end }}

@@ -1,10 +1,4 @@
-{{ partial "head" . }}
-  <body>
-    <div id="wrap">
-
-      <!-- Header -->
-      {{ partial "header" . }}
-      <div class="container">
+{{ define "main" }}
         <div class="blog-post">
           <h1>{{ .Params.Title }}</h1>
         </div>
@@ -12,15 +6,10 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="blogpost">
-              {{ .Content }}
+              {{ with .Content }}
+                {{ . }}
+              {{ end }}
             </div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    {{ partial "footer" . }}
-    
-  </body>
-</html>
+{{ end }}
