@@ -1,0 +1,33 @@
+{{ $plyr := resources.Get "vendor/plyr/dist/plyr.min.js" | minify | fingerprint }}
+<script src="{{ $plyr.RelPermalink }}" integrity="{{ $plyr.Data.Integrity }}" crossorigin="anonymous"></script>
+{{ if and .Params.video .Params.audio }}
+<script>
+  const players = Array.from(document.querySelectorAll('.js-player')).map(p => new Plyr(p, {
+    disableContextMenu: false,
+    speed: { 
+      selected: 1, 
+      options: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2]
+    }
+  }));
+</script>
+{{ else if .Params.video }}
+<script>
+  const player = new Plyr('#video-player', {
+    disableContextMenu: false,
+    speed: { 
+      selected: 1, 
+      options: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2]
+    }
+});
+</script>
+{{ else if .Params.audio }}
+<script>
+  const player = new Plyr('#audio-player', {
+    disableContextMenu: false,
+    speed: { 
+      selected: 1, 
+      options: [0.5, 0.75, 1, 1.25, 1.5, 1.75, 2]
+    }
+});
+</script>
+{{ end }}

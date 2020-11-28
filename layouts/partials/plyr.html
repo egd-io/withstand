@@ -1,0 +1,14 @@
+<hr>
+{{ if .Params.video }}
+  <video class="js-player" id="video-player" playsinline controls>
+  <source src="{{ .Params.video }}" allowfullscreen type="video/mp4" size="1080" />
+  </video>  
+{{ end }}
+{{ if and .Params.video .Params.audio }}
+<hr>
+{{ end }}
+{{ if .Params.audio }}
+<audio class="js-player" id="audio-player" controls>
+  <source src="{{ .Params.audio }}" type="audio/mp3" />
+</audio>
+{{ end }}
