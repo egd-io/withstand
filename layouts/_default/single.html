@@ -22,6 +22,9 @@
             </p>
           </h4>
         </div>
+        {{- if or .Params.audio .Params.video -}}
+          {{ partial "plyr" . }}
+        {{ end }}
         <hr>
         <div class="panel panel-default">
           <div class="panel-body">

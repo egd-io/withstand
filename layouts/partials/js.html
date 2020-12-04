@@ -1,5 +1,5 @@
 {{ $jQuery := resources.Get "js/jquery.min.js" }}
-{{ $bootstrap := resources.Get "js/bootstrap.min.js" }}
+{{ $bootstrap := resources.Get "vendor/bootstrap/assets/javascripts/bootstrap.min.js" }}
 {{ $highlight := resources.Get "js/highlight.min.js" }}
 
 {{ $js := ( slice $jQuery $bootstrap $highlight ) | resources.Concat "js/main.js" }}
@@ -18,4 +18,7 @@
 <script src="{{ .Site.BaseURL }}js/ie10-viewport-bug-workaround.js"></script>
 {{- if .Params.highlight -}}
 <script>hljs.initHighlightingOnLoad();</script>
+{{ end }}
+{{ if or .Params.audio .Params.video -}}
+{{ partial "plyr-js" . }}
 {{ end }}
