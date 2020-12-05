@@ -4,11 +4,13 @@
     <h3 style="text-align: right">
       {{ dateFormat "January 2, 2006" .date  }}
     </h3>
-    <h5 style="text-align: right">
+    <h3 style="text-align: right">
       {{- range $icon, $link := .links }}
-      &nbsp;<a href="{{ $link }}" target="_blank" aria-label="{{ index $.Page.Params.hover $icon }}" title="{{ index $.Page.Params.hover $icon }}"><i class="{{ index $.Page.Params.icons $icon }}"></i></a>
+        <a href="{{ $link }}" target="_blank">
+          <span class="label label-primary"><i class="{{ index $.Page.Params.icons $icon }}"></i></span>
+        </a>
       {{- end }}
-    </h5>
+    </h3>
   </div>
   <div class="col-sm-8 col-md-8 col-lg-8">
   <h3 style="text-align: left">
