@@ -1,0 +1,22 @@
+{{ range sort .data "date" "desc" }}
+<div class="row">
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <h3 style="text-align: right">
+      {{ dateFormat "January 2, 2006" .date  }}
+    </h3>
+    <h5 style="text-align: right">
+      {{- range $icon, $link := .links }}
+      &nbsp;<a href="{{ $link }}" target="_blank" aria-label="{{ index $.Page.Params.hover $icon }}" title="{{ index $.Page.Params.hover $icon }}"><i class="{{ index $.Page.Params.icons $icon }}"></i></a>
+      {{- end }}
+    </h5>
+  </div>
+  <div class="col-sm-8 col-md-8 col-lg-8">
+  <h3 style="text-align: left">
+    <strong>{{ .title }}</strong>
+  </h3>
+    <h5>
+      <a href="{{ .publication_link }}" target="_blank">{{ .publication }}</a>
+    </h5>
+  </div>
+</div>
+{{ end }}
