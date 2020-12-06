@@ -1,8 +1,11 @@
 {{ $jQuery := resources.Get "js/jquery.min.js" }}
 {{ $bootstrap := resources.Get "vendor/bootstrap/assets/javascripts/bootstrap.min.js" }}
 {{ $highlight := resources.Get "js/highlight.min.js" }}
+{{ $docs := resources.Get "js/docs.min.js" }}
+{{ $ie10 := resources.Get "js/ie10-viewport-bug-workaround.js" }}
+{{ $scroll := resources.Get "js/scroll.js" }}
 
-{{ $js := ( slice $jQuery $bootstrap $highlight ) | resources.Concat "js/main.js" }}
+{{ $js := ( slice $jQuery $bootstrap $highlight $docs $ie10 $scroll ) | resources.Concat "js/main.js" }}
 {{ if .Site.IsServer }}
 <script src="{{ $js.RelPermalink }}"></script>
 {{ else }}
