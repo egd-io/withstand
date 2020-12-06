@@ -6,21 +6,21 @@
     <h3 style="text-align: right">
       {{ .Date.Format "January 2, 2006" }}
     </h3>
-    <h6 style="text-align: right">
+    <h5 style="text-align: right">
       {{- range $series }}
         <a href="{{ .Permalink }}"><span class="label label-warning">{{ .LinkTitle | lower }}</span></a>
       {{- end }}
-    </h6>
-    <h6 style="text-align: right">
+    </h5>
+    <h5 style="text-align: right">
       {{- range $categories }}
         <a href="{{ .Permalink }}"><span class="label label-info">{{ .LinkTitle | lower }}</span></a>
       {{- end }}
-    </h6>
-    <h6 style="text-align: right">
+    </h5>
+    <h5 style="text-align: right">
       {{- range $tags }}
         <a href="{{ .Permalink }}"><span class="label label-primary">{{ .LinkTitle | lower }}</span></a>
       {{- end }}
-    </h6>
+    </h5>
   </div>
   <div class="col-sm-8 col-md-8 col-lg-8">
   <h3 style="text-align: left">

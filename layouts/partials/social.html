@@ -2,7 +2,11 @@
   <ul class="social-links">
     {{ with index . "link" }}
     {{ range . }}
-    <li title="{{ .desc }}" aria-label="{{ .name }}"><a href="{{ .url }}" target="_blank"><i class="{{ .icon }}"></i></a></li>
+    <li title="{{ .desc }}" aria-label="{{ .name }}">
+      <a href="{{ .url }}" target="_blank">
+        <i class="{{ .icon }}"></i>
+      </a>
+    </li>
     {{ end }}
     {{ end }}
   </ul>
