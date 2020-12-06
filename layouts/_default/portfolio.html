@@ -1,0 +1,22 @@
+{{ define "main" }}
+{{ $scratch := newScratch}}
+{{ $data := index $.Site.Data (string .Params.source) }}
+{{ if .Params.selected }}
+  {{ range $data }}
+    {{ if .selected }}
+      {{ $scratch.Add "data" (slice .) }}
+    {{ end }}
+  {{ end }}
+{{ else }}
+  {{ $scratch.Set "data" $data }}
+{{ end }}
+        <h1>{{ .Title }}</h1>
+        {{ with .Content }}
+          {{ . }}
+        {{ end }}
+          <div class="panel panel-default">
+            <div class="panel-body">
+              {{ partial "portfolios" ( dict "Page" . "data" ( $scratch.Get "data" )) }}
+            </div>
+          </div>
+{{ end }}
