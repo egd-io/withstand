@@ -7,7 +7,7 @@
         <div class="blog-title">
           <h4>
             <p>
-            {{ .Date.Format "January 2, 2006" }} &nbsp;&bull;&nbsp; <i class="far fa-clock"></i> {{ .ReadingTime }} - {{ math.Round ( mul 1.2 .ReadingTime ) }} minute read
+            {{ .Date.Format "January 2, 2006" }} &nbsp;&bull;&nbsp; <i class="far fa-clock"></i> {{ if gt .ReadingTime 2}}{{ .ReadingTime }} - {{ math.Round ( mul 1.2 .ReadingTime ) }}{{ else }}{{ .ReadingTime }}{{ end }} minute read
             </p>
             <p>
             {{- range ( .GetTerms "series" ) }}
@@ -55,7 +55,7 @@
           </div>
           {{ with $.Site.DisqusShortname }}
           <hr>
-        {{ partial "disqus" . }}
+          {{ template "_internal/disqus.html" . }}
         {{ end }}
         </div>
 {{ end }}
