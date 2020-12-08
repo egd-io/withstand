@@ -6,9 +6,11 @@
     </h3>
     <h3 style="text-align: right">
       {{- range $icon, $link := .links }}
+      <span class="label label-primary">
         <a href="{{ $link }}" target="_blank">
-          <span class="label label-primary"><i class="{{ index $.Page.Params.icons $icon }}"></i></span>
+          <i style="color: #fff;" class="{{ index $.Page.Params.icons $icon }}"></i>
         </a>
+      </span>
       {{- end }}
     </h3>
   </div>

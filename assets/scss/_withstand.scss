@@ -189,6 +189,12 @@ html, body {
   text-align: left;
   line-height: 30px;
   font-size: 18px;
+
+  figure {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 /* Footer  */
