@@ -14,10 +14,10 @@
             <a href="{{ .Permalink }}"><span class="label label-warning">{{ .LinkTitle | lower }}</span></a>
             {{- end }}
             {{- range ( .GetTerms "categories" ) }}
-            <a href="{{ .Permalink }}"><span class="label label-primary">{{ .LinkTitle | lower }}</span></a>
+            <a href="{{ .Permalink }}"><span class="label label-info">{{ .LinkTitle | lower }}</span></a>
             {{- end }}
             {{- range ( .GetTerms "tags" ) }}
-            <a href="{{ .Permalink }}"><span class="label label-info">{{ .LinkTitle | lower }}</span></a>
+            <a href="{{ .Permalink }}"><span class="label label-primary">{{ .LinkTitle | lower }}</span></a>
             {{- end }}
             </p>
           </h4>
