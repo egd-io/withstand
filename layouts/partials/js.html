@@ -14,13 +14,16 @@
 {{ else }}
 {{ $jQuery := $jQuery | minify | fingerprint }}
 {{ $bootstrap := $bootstrap | minify | fingerprint }}
-{{ $js := $js | minify | fingerprint }}
+{{ $highlight := $highlight | minify | fingerprint }}
+{{ $docs := $docs | minify | fingerprint }}
+{{ $ie10 := $ie10 | minify | fingerprint }}
+{{ $scroll := $scroll | minify | fingerprint }}
 <script src="{{ $jQuery.RelPermalink }}" integrity="{{ $jQuery.Data.Integrity }}" crossorigin="anonymous"></script>
 <script src="{{ $bootstrap.RelPermalink }}" integrity="{{ $bootstrap.Data.Integrity }}" crossorigin="anonymous"></script>
-<script src="{{ $highlight.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
-<script src="{{ $docs.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
-<script src="{{ $ie10.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
-<script src="{{ $scroll.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" crossorigin="anonymous"></script>
+<script src="{{ $highlight.RelPermalink }}" integrity="{{ $highlight.Data.Integrity }}" crossorigin="anonymous"></script>
+<script src="{{ $docs.RelPermalink }}" integrity="{{ $docs.Data.Integrity }}" crossorigin="anonymous"></script>
+<script src="{{ $ie10.RelPermalink }}" integrity="{{ $ie10.Data.Integrity }}" crossorigin="anonymous"></script>
+<script src="{{ $scroll.RelPermalink }}" integrity="{{ $scroll.Data.Integrity }}" crossorigin="anonymous"></script>
 {{ end }}
 {{- range .Site.Params.custom_js -}}
 <script src="{{ $.Site.BaseURL }}{{ . }}"></script>
