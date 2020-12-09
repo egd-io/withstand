@@ -1,3 +1,4 @@
+{{ if .data }}
 {{ range sort .data "date" "desc" }}
 <div class="row">
   <div class="col-sm-4 col-md-4 col-lg-4">
@@ -23,4 +24,5 @@
     </h5>
   </div>
 </div>
+{{ end }}
 {{ end }}
