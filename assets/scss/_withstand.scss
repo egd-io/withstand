@@ -153,6 +153,25 @@ html, body {
 .social-links li a:hover {
   color: #000;
 }
+.list-links {
+  display: block;
+  margin: 0 auto;
+  padding: 0px;
+  text-align: right !important;
+}
+.list-links li {
+  display: inline-block;
+  padding: 1px;
+  padding-top: 0;
+  text-align: right;
+}
+.list-links li a {
+  color: #000;
+  padding-bottom: 2px;
+}
+.list-links li a:hover {
+  color: #000;
+}
 .avatar {
   padding-top: 5%;
 }
