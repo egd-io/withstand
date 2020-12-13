@@ -5,13 +5,15 @@
     <h3 style="text-align: right">
       {{ dateFormat "January 2, 2006" .date  }}
     </h3>
-    <h3 style="text-align: right">
+    <h3 class="list-links">
       {{- range $icon, $link := .links }}
-      <span class="label label-primary">
-        <a href="{{ $link }}" target="_blank">
+      <li>
+      <a href="{{ $link }}" target="_blank">
+        <span class="label label-primary">
           <i style="color: #fff;" class="{{ index $.Page.Params.icons $icon }}"></i>
-        </a>
-      </span>
+        </span>
+      </a>
+      </li>
       {{- end }}
     </h3>
   </div>

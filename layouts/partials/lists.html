@@ -6,19 +6,37 @@
     <h3 style="text-align: right">
       {{ .Date.Format "January 2, 2006" }}
     </h3>
-    <h5 style="text-align: right">
+    <h5 class="list-links">
       {{- range $series }}
-        <a href="{{ .Permalink }}"><span class="label label-warning">{{ .LinkTitle | lower }}</span></a>
+      <li>
+        <a href="{{ .Permalink }}">
+          <span class="label label-warning">
+            {{ .LinkTitle | lower }}
+          </span>
+        </a>
+      </li>
       {{- end }}
     </h5>
-    <h5 style="text-align: right">
+    <h5 class="list-links">
       {{- range $categories }}
-        <a href="{{ .Permalink }}"><span class="label label-info">{{ .LinkTitle | lower }}</span></a>
+      <li>
+        <a href="{{ .Permalink }}">
+          <span class="label label-info">
+            {{ .LinkTitle | lower }}
+          </span>
+        </a>
+      </li>
       {{- end }}
     </h5>
-    <h5 style="text-align: right">
+    <h5 class="list-links">
       {{- range $tags }}
-        <a href="{{ .Permalink }}"><span class="label label-primary">{{ .LinkTitle | lower }}</span></a>
+      <li>
+        <a href="{{ .Permalink }}">
+          <span class="label label-primary">
+            {{ .LinkTitle | lower }}
+          </span>
+        </a>
+      </li>
       {{- end }}
     </h5>
   </div>
