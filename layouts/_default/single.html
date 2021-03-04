@@ -30,6 +30,18 @@
           <div class="panel-body">
             <div class="blogpost">
               {{ .Content }}
+              {{ with .Site.Params.support }}
+              <hr>
+              <div class="container">
+                <p><i>{{ .text | safeHTML }}</i></p>
+              <a href="{{ .button_url }}" target="_blank">
+                <span class="btn btn-primary">
+                  <strong>{{ .button_text | safeHTML }}</strong>
+                </span>
+              </a>
+              </div>
+              {{ end }}
+              {{ partial "social.html" .Site.Params.social }}
               <hr>
               {{ $related := .Site.RegularPages.Related . | first 3 }}
               {{ with $related }}
